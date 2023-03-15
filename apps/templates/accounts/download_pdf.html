@@ -1,0 +1,23 @@
+{% extends "layouts/base-auth.html" %}
+{% block title %} pardakht {% endblock title %}
+{% block content %}
+  <div class="page-header register-page header-filter" filter-color="black" style="background-image: url('/static/assets/img/register.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="card card-signup">
+            <h2 class="card-title text-center">
+                 پرداخت با موفقیت انجام شد           
+            </h2>
+            <div class="container flexes">
+                <p>{{user.username}}</p>
+                {% comment %} <p>برای دانلود فایل PDF کاربر، لطفاً <a href="{% url 'generate_pdf' user.id %}">اینجا</a> کلیک کنید.</p> {% endcomment %}
+                <p>برای دانلود فایل PDF لطفاً <a href="/static/assets/pdf/test.pdf" Download>اینجا</a> کلیک کنید.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+

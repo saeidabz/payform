@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profile Information</title>
+    <link href="/static/assets/css/fonts.css" rel="stylesheet" />
+  </head>
+  
+  <body style="font-family: IRANSans">
+    <h2>Profile Information</h2>
+    <pdf:language name="Persian"/>
+    <p><strong>Mobile:</strong> {{ user.profile.mobile }}</p>
+    <p><strong>Postal Code:</strong> {{ user.profile.postal_code }}</p>
+    <p><strong>City:</strong> {{ user.profile.city }}</p>
+    <p><strong>Country:</strong> {{ user.profile.country }}</p>
+    <p><strong>Birthday:</strong> {{ user.profile.birthday }}</p>
+    <p><strong>Father's Name:</strong> {{ user.profile.father_name }}</p>
+    <p><strong>Mother's Name:</strong> {{ user.profile.mother_name }}</p>
+    <p><strong>Address:</strong> {{ user.profile.address }}</p>
+  <div style="font-family: IRANSans">متن نمونه</div>
+  </body>
+</html>
