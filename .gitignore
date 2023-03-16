@@ -15,6 +15,7 @@ venv
 env
 venv
 .env
+*.pyc
 
 # other
 #.DS_Store

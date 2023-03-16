@@ -1,19 +1,29 @@
 /*      Register page        */
 
 .card-signup .card-body {
-    padding: 0 !important;
+  padding: 0 !important;
 }
-.card-body .row{
-    justify-content: center;
-}
-
-.form-check{
-    text-align: justify;
+.card-body .row {
+  justify-content: center;
 }
 
-.flexes{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-items: center;
+.form-check {
+  text-align: justify;
+}
+
+.flexes {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: IRANSans !important;
 }

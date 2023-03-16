@@ -1,19 +1,17 @@
-{% extends "layouts/base-auth.html" %}
-{% block navigation-auth %}{% endblock navigation-auth %}
-{% block title %} Register {% endblock title %}
+{% extends "layouts/base-fullscreen.html" %}
 
 {% block content %}
 
   <div class="page-header register-page header-filter" filter-color="black" style="background-image: url('/static/assets/img/register.jpg')">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 ml-auto mr-auto">
-          <div class="card card-signup">
+        <div class="col-md-8 ml-auto mr-auto" style="padding-top: 200px;">
+          <div class="card card-signup" style="margin-top: 100px">
             <h2 class="card-title text-center">
               ثبت نام
             </h2>
             <div class="card-body">
-              <div class="row">
+              <div class="row" style="justify-content: center !important;">
              
                 <div class="col-md-7">
                   <div class="social text-center">
@@ -31,7 +29,43 @@
 
                   <form role="form" method="post" action="/account/insert_profile/" enctype="multipart/form-data">
 
-                    {% csrf_token %}              
+                    {% csrf_token %}   
+                    
+                    <div class="form-group has-default">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">person</i>
+                          </span>
+                        </div>
+                        {{ form.first_name }}
+                      </div>
+                    </div>
+                    <span class="text-error">{{ form.first_name.errors }}</span>
+
+                    <div class="form-group has-default">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">person</i>
+                          </span>
+                        </div>
+                        {{ form.last_name }}
+                      </div>
+                    </div>
+                    <span class="text-error">{{ form.last_name.errors }}</span>
+
+                    <div class="form-group has-default">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">stay_current_portrait</i>
+                          </span>
+                        </div>
+                        {{ form.code_melli }}
+                      </div>
+                    </div>
+                    <span class="text-error">{{ form.code_melli.errors }}</span>
 
                     <div class="form-group has-default">
                       <div class="input-group">
@@ -49,25 +83,13 @@
                       <div class="input-group">
                         <div class="input-group-prepend">
                           <span class="input-group-text">
-                            <i class="material-icons">code</i>
+                            <i class="material-icons">stay_current_portrait</i>
                           </span>
                         </div>
-                        {{ form.postal_code }}
+                        {{ form.phone }}
                       </div>
                     </div>
-                    <span class="text-error">{{ form.postal_code.errors }}</span>
-
-                    <div class="form-group has-default">
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">
-                            <i class="material-icons">location_city</i>
-                          </span>
-                        </div>
-                        {{ form.city }}
-                      </div>
-                    </div>
-                    <span class="text-error">{{ form.city.errors }}</span>
+                    <span class="text-error">{{ form.phone.errors }}</span>
 
                     <div class="form-group has-default">
                       <div class="input-group">
@@ -80,6 +102,18 @@
                       </div>
                     </div>
                     <span class="text-error">{{ form.country.errors }}</span>
+
+                    <div class="form-group has-default">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">location_city</i>
+                          </span>
+                        </div>
+                        {{ form.city }}
+                      </div>
+                    </div>
+                    <span class="text-error">{{ form.city.errors }}</span>
 
                     <!-- Birthday -->
                     <div class="form-group has-default">
@@ -130,7 +164,18 @@
                     </div>
                     <span class="text-error">{{ form.address.errors }}</span></br>
 
-                    <input type="file" name="image" accept="image/*">
+                    <div class="form-group has-default">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">code</i>
+                          </span>
+                        </div>
+                        {{ form.postal_code }}
+                      </div>
+                    </div>
+                    <span class="text-error">{{ form.postal_code.errors }}</span>
+
 
                     <div class="text-center">
                       <button type="submit" name="register" class="btn btn-primary btn-round mt-4">ثبت نام</button>
@@ -144,18 +189,6 @@
       </div>
     </div>
 
-    {% include 'includes/footer-auth.html' %}
-
   </div>
 
 {% endblock content %}
-
-{% block javascripts %}
-
-  <script>
-    $(document).ready(function() {
-      md.checkFullPageBackgroundImage();
-    });
-  </script>
-  
-{% endblock javascripts %}
