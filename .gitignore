@@ -11,10 +11,10 @@
 #*.sqlite3
 #*.log
 
-# venv
-#env
-#venv
-#.env
+venv
+env
+venv
+.env
 
 # other
 #.DS_Store
